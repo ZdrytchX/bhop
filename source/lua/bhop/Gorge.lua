@@ -97,22 +97,24 @@ function Gorge:ModifyVelocity(input, velocity, deltaTime)
 
       --initialisin
       local laccelmod = 70--acceleration value
-      local lAirAcceleration = self:GetMaxSpeed() * 2--maxSpeedTable.maxSpeed --accelerate to maximum speed in one second
+      local lAirAcceleration = self:GetMaxSpeed() * 2 --accelerate to maximum speed in one second
       local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector
 
+      --remove vertical direction, UWE fucked something up again
+      wishDir.y = 0
+
       local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
-      --Q1 strafe check
-      laccelmod = 70
+
       lAirAcceleration = lAirAcceleration * 0.1
 
       local addspeedlimit = lAirAcceleration - wishDircurrentspeed
       if addspeedlimit <= 0 then return end
 
       accelerationIncrement = laccelmod * deltaTime * lAirAcceleration
-      if accelerationIncrement > addspeedlimit then accelerationIncrement = addspeedlimit end
+      if accelerationIncrement > addspeedlimit then
+        accelerationIncrement = addspeedlimit
+      end
 
-      --remove vertical speed
-      wishDir.y = 0
       wishDir:Normalize()
 
       velocity:Add(wishDir * accelerationIncrement)

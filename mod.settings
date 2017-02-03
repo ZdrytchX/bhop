@@ -1,0 +1,10 @@
+name        = "BunnyHop Physics"
+source_dir  = "source"
+output_dir  = "output"
+description = [=[ModID: 32FA76A6
+This mod swaps out the default air control physics with Bunnyhop (acceleration modifier: 70, acceleration limit = 10% of speed limit). Bunnyhop is another name for a Strafe Jumping technique used in QuakeWorld, Quake 1, Half Life, Counterstrike, Natural Selection (NS1) and most of those other GoldSRC / Source engine games, and although the technique looks different at first glance, the technique and mathematical equations are actually the same. You compare it to Q2/Q3's strafe jumping technique at very high speeds: https://www.youtube.com/watch?v=mprC4OJvhpsI suspect the name comes from the fact that queueing a jump isn't a thing on the GoldSRC engines meaning you had to jump at the exact time, or you made a script, or bind mousewheel for +JUMP.Recommended to run with Debugspeed Upgrade for the fanciness, though not required: 3184f6fd ( http://steamcommunity.com/sharedfiles/filedetails/?id=830797565 )
+Do NOT run this with TremNS2!]=]
+image       = "preview.jpg"
+tag_modtype = "Gameplay Tweak"
+tag_support = "Must be run on Server"
+publish_id = "32fa76a6"
