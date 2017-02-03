@@ -1,3 +1,9 @@
+function Skulk:GetGroundFriction()
+
+    return 4.35
+
+end
+
 function Skulk:GetAirControl()
     return 0
 end

@@ -38,5 +38,5 @@ function Player:ModifyVelocity(input, velocity, deltaTime)
 end
 
 function Player:GetGroundFriction()
-    return 6
+    return 3
 end

@@ -37,3 +37,9 @@ function Onos:ModifyVelocity(input, velocity, deltaTime)
   end
 
 end
+
+function Onos:GetGroundFriction()
+
+    return 4.5
+
+end

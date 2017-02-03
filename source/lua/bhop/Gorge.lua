@@ -9,7 +9,7 @@ function Gorge:GetGroundFriction()
         return self:GetGameEffectMask(kGameEffect.OnInfestation) and Gorge.kBellyFrictionOnInfestation or Gorge.kBellyFriction
     end
 
-    return 7
+    return 3.6--7
 
 end
 

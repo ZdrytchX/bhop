@@ -1,3 +1,9 @@
+function Marine:GetGroundFriction()
+
+    return 3
+
+end
+
 function Marine:GetSlowOnLand()
     return false
 end
