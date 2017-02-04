@@ -17,6 +17,7 @@ function Onos:ModifyVelocity(input, velocity, deltaTime)
 
       --remove vertical direction, UWE fucked something up again
       wishDir.y = 0
+      wishDir:Normalize()
 
       local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
 
@@ -29,8 +30,6 @@ function Onos:ModifyVelocity(input, velocity, deltaTime)
       if accelerationIncrement > addspeedlimit then
         accelerationIncrement = addspeedlimit
       end
-
-      wishDir:Normalize()
 
       velocity:Add(wishDir * accelerationIncrement)
 

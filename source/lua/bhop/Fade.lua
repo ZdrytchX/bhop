@@ -54,9 +54,8 @@ function Fade:ModifyVelocity(input, velocity, deltaTime)
       local laccelmod = 70--acceleration value
       local lAirAcceleration = self:GetMaxSpeed() * 2 --accelerate to maximum speed in one second
       local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector
-
-      --remove vertical direction, UWE fucked something up again
       wishDir.y = 0
+      wishDir:Normalize()
 
       local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
 
@@ -69,8 +68,6 @@ function Fade:ModifyVelocity(input, velocity, deltaTime)
       if accelerationIncrement > addspeedlimit then
         accelerationIncrement = addspeedlimit
       end
-
-      wishDir:Normalize()
 
       velocity:Add(wishDir * accelerationIncrement)
 
